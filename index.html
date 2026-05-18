@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lagos Vibes Kitchen | Best Nigerian Restaurant 🍖</title>
-    
-    <!-- Google Fonts -->
+    <title>Lagos Vibes Kitchen | Best Nigerian Restaurant</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        /* ==== CSS VARIABLES ==== */
+        /* ==============================
+           CSS VARIABLES & RESET
+           ============================== */
         :root {
             --primary: #ff4757;
-            --primary-dark: #d63031;
             --secondary: #ffa502;
-            --secondary-dark: #e67e22;
             --dark: #1e272e;
-            --dark-secondary: #2d3436;
-            --light: #dfe6e9;
+            --light: #f1f2f6;
             --white: #ffffff;
-            --off-white: #f5f6fa;
-            --gray: #636e72;
-            --gray-light: #b2bec3;
             --whatsapp: #25D366;
-            --whatsapp-dark: #20bd5a;
-            --success: #00b894;
+            --success: #2ed573;
+            --gray: #747d8c;
         }
 
         * {
@@ -37,14 +29,13 @@
         }
 
         body {
-            background-color: var(--off-white);
+            background-color: var(--light);
             color: var(--dark);
-            line-height: 1.7;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
         html { scroll-behavior: smooth; }
-        a { text-decoration: none; }
+        a { text-decoration: none; color: inherit; }
         img { max-width: 100%; }
 
         .container {
@@ -53,112 +44,89 @@
             padding: 0 20px;
         }
 
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
+        .section {
+            padding: 80px 0;
         }
 
-        .btn-primary {
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 4px;
             background: var(--primary);
-            color: white;
+            margin: 15px auto;
+            border-radius: 2px;
         }
 
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 71, 87, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: var(--dark);
-        }
-
-        /* ===== NAVBAR ===== */
+        /* ==============================
+           NAVBAR
+           ============================== */
         .navbar {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 0;
+            padding: 15px 0;
         }
 
         .logo {
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             font-weight: 900;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
-        .logo span { color: var(--dark); }
-
-        .nav-links {
+        .nav-menu {
             display: flex;
+            gap: 25px;
             align-items: center;
-            gap: 30px;
         }
 
         .nav-link {
-            color: var(--dark);
             font-weight: 500;
-            font-size: 0.95rem;
             transition: 0.3s;
-            position: relative;
         }
 
         .nav-link:hover { color: var(--primary); }
 
         .btn-wa {
             background: var(--whatsapp);
-            color: white !important;
-            padding: 10px 22px;
+            color: white;
+            padding: 10px 20px;
             border-radius: 50px;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
-        .btn-wa:hover {
-            background: var(--whatsapp-dark);
-            transform: scale(1.05);
-        }
+        .btn-wa:hover { background: #128c7e; }
 
-        /* ===== HERO SECTION ===== */
+        /* ==============================
+           HERO SECTION
+           ============================== */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, rgba(30, 39, 46, 0.85), rgba(255, 71, 87, 0.3)),
-                url('https://images.unsplash.com/photo-1512058564366-18510be2db19?w=1920');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1565557623262-b51c0373b181?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -167,336 +135,149 @@
             padding-top: 80px;
         }
 
-        .hero-content {
-            max-width: 850px;
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-
-        .hero-title {
-            font-size: 4.2rem;
+        .hero-content h1 {
+            font-size: 3.5rem;
             font-weight: 900;
-            line-height: 1.1;
             margin-bottom: 20px;
-            text-transform: uppercase;
+            line-height: 1.1;
         }
 
-        .hero-title span {
-            color: var(--secondary);
-        }
+        .hero-content h1 span { color: var(--primary); }
 
-        .hero-desc {
+        .hero-content p {
             font-size: 1.2rem;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        /* ===== FEATURES BAR ===== */
-        .features-bar {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            padding: 40px 0;
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.3);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .feature-item {
-            text-align: center;
+        .btn-cta {
+            background: var(--primary);
             color: white;
-            padding: 10px;
-        }
-
-        .feature-item i {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        .feature-item h4 {
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        /* ===== SECTIONS ===== */
-        .section {
-            padding: 90px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 12px;
-        }
-
-        .section-header p {
+            padding: 15px 35px;
+            border-radius: 50px;
             font-size: 1.1rem;
-            color: var(--gray);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        .divider {
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            margin: 15px auto;
-            border-radius: 2px;
+        .btn-cta:hover {
+            background: #e84118;
+            transform: translateY(-3px);
         }
 
-        /* ===== ABOUT SECTION ===== */
-        .about-section {
+        /* ==============================
+           TENTANG KAMI (ABOUT)
+           ============================== */
+        .about {
             background: var(--white);
         }
 
         .about-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
         }
 
-        .about-image {
-            position: relative;
-        }
-
-        .about-image img {
+        .about-img img {
             border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -25px;
-            left: -25px;
-            width: 100%;
-            height: 100%;
-            border: 4px solid var(--primary);
-            border-radius: 20px;
-            z-index: -1;
-        }
-
-        .about-content h3 {
-            font-size: 2rem;
-            font-weight: 700;
+        .about-text h3 {
+            font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--primary);
         }
 
-        .about-content > p {
+        .about-text p {
             color: var(--gray);
-            margin-bottom: 25px;
-            font-size: 1.05rem;
+            margin-bottom: 20px;
         }
 
-        .about-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .about-list li {
+        .feature-list li {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 500;
-            font-size: 1rem;
         }
 
-        .about-list li i {
-            width: 28px;
-            height: 28px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
+        .feature-list i {
+            color: var(--success);
         }
 
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding-top: 25px;
-            border-top: 2px solid var(--light);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-item h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        .stat-item p {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        /* ===== MENU SECTION ===== */
+        /* ==============================
+           MENU (PRODUCTS)
+           ============================== */
         .menu-section {
-            background: var(--off-white);
+            background: var(--light);
         }
 
-        .menu-categories {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .category-btn {
-            background: var(--white);
-            border: 2px solid var(--light);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .category-btn.active,
-        .category-btn:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .menu-grid {
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .menu-card {
+        .card {
             background: var(--white);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
 
-        .menu-card:hover {
-            transform: translateY(-12px);
+        .card:hover {
+            transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
-        .menu-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .menu-image img {
+        .card-img {
             width: 100%;
-            height: 240px;
+            height: 220px;
             object-fit: cover;
-            transition: 0.4s;
         }
 
-        .menu-card:hover .menu-image img {
-            transform: scale(1.1);
-        }
-
-        .menu-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--secondary);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .menu-badge.popular {
-            background: var(--primary);
-        }
-
-        .menu-body {
+        .card-body {
             padding: 25px;
         }
 
-        .menu-title {
-            font-size: 1.25rem;
+        .card-title {
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        .menu-desc {
-            font-size: 0.9rem;
+        .card-desc {
             color: var(--gray);
-            margin-bottom: 18px;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
         }
 
-        .menu-footer {
+        .card-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 18px;
-            border-top: 1px solid var(--light);
+            padding-top: 15px;
+            border-top: 1px solid #eee;
         }
 
-        .menu-price {
+        .price {
             font-size: 1.4rem;
             font-weight: 800;
             color: var(--primary);
         }
 
-        .menu-price span {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--gray);
-            text-decoration: line-through;
-            margin-left: 5px;
-        }
-
-        .btn-order {
+        .btn-beli {
             background: var(--whatsapp);
             color: white;
-            padding: 12px 22px;
+            padding: 12px 20px;
             border-radius: 10px;
             font-weight: 600;
             border: none;
@@ -504,150 +285,227 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: 0.3s;
         }
 
-        .btn-order:hover {
-            background: var(--whatsapp-dark);
-            transform: scale(1.05);
-        }
+        .btn-beli:hover { background: #128c7e; }
 
-        /* ===== TESTIMONIALS ===== */
-        .testimonials {
-            background: var(--white);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background: var(--off-white);
-            padding: 30px;
-            border-radius: 20px;
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '\201C';
-            font-size: 5rem;
-            color: var(--primary);
-            opacity: 0.15;
-            position: absolute;
-            top: 5px;
-            left: 20px;
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-            color: var(--gray);
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .author-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .author-info p {
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        .rating {
-            color: var(--secondary);
-            font-size: 0.9rem;
-            margin-top: 3px;
-        }
-
-        /* ===== CONTACT SECTION ===== */
-        .contact-section {
-            background: linear-gradient(rgba(30, 39, 46, 0.92), rgba(30, 39, 46, 0.92)),
-                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        /* ==============================
+           KONTAK & LOKASI
+           ============================== */
+        .contact {
+            background: var(--dark);
             color: white;
         }
 
-        .contact-section .section-header h2,
-        .contact-section .section-header p {
+        .contact .section-title h2,
+        .contact .section-title p {
             color: white;
         }
 
         .contact-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-        }
-
-        .contact-info-boxes {
-            display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 35px;
+            gap: 40px;
         }
 
-        .info-box {
-            background: rgba(255,255,255,0.08);
+        .contact-info-box {
+            background: rgba(255,255,255,0.1);
             padding: 25px;
             border-radius: 15px;
-            text-align: center;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 20px;
         }
 
-        .info-box:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .info-box i {
-            font-size: 2rem;
-            margin-bottom: 12px;
-            color: var(--secondary);
-        }
-
-        .info-box h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .info-box p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            line-height: 1.5;
-        }
-
-        .social-section h4 {
-            margin-bottom: 15px;
-        }
-
-        .social-icons {
+        .contact-item {
             display: flex;
-            gap: 12px;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .social-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover { background: var(--primary); }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        /* ==============================
+           FOOTER
+           ============================== */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ==============================
+           RESPONSIVE (HP)
+           ============================== */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .nav-menu { display: none; }
+            .about-wrapper, .contact-wrapper, .product-grid { grid-template-columns: 1fr; }
+            .about-img { order: -1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Lagos<span>Vibes</span> 🇨🇳</a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="https://wa.me/2348123456789" class="btn-wa" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Order Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>No Wahala,<br>Just <span>Tasty Food!</span> 🍖</h1>
+            <p>Best Nigerian cuisines in Lagos. Freshly cooked, delivered fast to your door in Victoria Island.</p>
+            <a href="#menu" class="btn-cta">
+                <i class="fas fa-utensils"></i> View Menu & Order
+            </a>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <h3>Welcome to Lagos Vibes Kitchen</h3>
+                    <p>We serve the most authentic Nigerian peppered dishes with 100% fresh ingredients. From Suya to Egusi Soup, we make sure every meal is tasty.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Fresh ingredients daily</li>
+                        <li><i class="fas fa-check-circle"></i> Fast delivery within Lagos</li>
+                        <li><i class="fas fa-check-circle"></i> Best taste in town</li>
+                        <li><i class="fas fa-check-circle"></i> Clean & hygenic kitchen</li>
+                    </ul>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chef cooking">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU / PRODUK -->
+    <section class="section menu-section" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <div class="divider"></div>
+                <p>Tap "Order" to send your order directly via WhatsApp!</p>
+            </div>
+
+            <div class="product-grid">
+                <!-- Produk 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img" alt="Suya">
+                    <div class="card-body">
+                        <div class="card-title">Special Beef Suya (5 Sticks)</div>
+                        <div class="card-desc">Spicy grilled beef with our secret pepper recipe, served with fresh onions.</div>
+                        <div class="card-footer">
+                            <div class="price">₦3,000</div>
+                            <button onclick="orderWA('Special Beef Suya', '3000')" class="btn-beli">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk 2 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1541518761787-388d44792b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img" alt="Peppered Chicken">
+                    <div class="card-body">
+                        <div class="card-title">Peppered Chicken (Full)</div>
+                        <div class="card-desc">Tasty fried chicken with special pepper sauce. Served with side dish.</div>
+                        <div class="card-footer">
+                            <div class="price">₦2,500</div>
+                            <button onclick="orderWA('Peppered Chicken', '2500')" class="btn-beli">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk 3 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img" alt="Egusi Soup">
+                    <div class="card-body">
+                        <div class="card-title">Egusi Soup + Pounded Yam</div>
+                        <div class="card-desc">Rich melon soup with fresh fish and goat meat. Served with pounded yam.</div>
+                        <div class="card-footer">
+                            <div class="price">₦2,000</div>
+                            <button onclick="orderWA('Egusi Soup with Pounded Yam', '2000')" class="btn-beli">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk 4 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1626200419199-391ae4be7b76?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img" alt="Jollof Rice">
+                    <div class="card-body">
+                        <div class="card-title">Party Jollof Rice</div>
+                        <div class="card-desc"> authentic Nigerian party jollof rice with grilled chicken & salad.</div>
+                        <div class="card-footer">
+                            <div class="price">₦1,800</div>
+                            <button onclick="orderWA('Party Jollof Rice', '1800')" class="btn-beli">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk 5 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img" alt="Suya Wrap
