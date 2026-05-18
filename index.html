@@ -69,6 +69,8 @@
 
         /* ============================== MENU ============================== */
         .menu-section { background: var(--light); }
+        .menu-category { margin-bottom: 40px; }
+        .menu-category h3 { font-size: 1.8rem; margin-bottom: 20px; text-align: center; color: var(--dark); }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
         .card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: 0.3s; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
@@ -155,7 +157,7 @@
         </div>
     </section>
 
-    <!-- MENU SECTION - 6 ITEMS -->
+    <!-- MENU SECTION -->
     <section class="section menu-section" id="menu">
         <div class="container">
             <div class="section-title">
@@ -164,55 +166,97 @@
                 <p>Tap "Order" to send your order directly via WhatsApp!</p>
             </div>
 
-            <div class="product-grid">
-                
-                <!-- MENU 1: Beef Suya -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600" class="card-img" alt="Beef Suya">
-                    <div class="card-body">
-                        <div class="card-title">Special Beef Suya (5 Sticks)</div>
-                        <div class="card-desc">Spicy grilled beef with secret pepper recipe, served with fresh onions.</div>
-                        <div class="card-footer">
-                            <div class="price">₦3,000</div>
-                            <button onclick="orderWA('Special Beef Suya (5 Sticks)', '3000')" class="btn-beli">
-                                <i class="fab fa-whatsapp"></i> Order
-                            </button>
+            <!-- FOOD MENU -->
+            <div class="menu-category">
+                <h3>🍖 Main Dishes</h3>
+                <div class="product-grid">
+                    
+                    <!-- MAKANAN 1: Beef Suya -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600" class="card-img" alt="Beef Suya">
+                        <div class="card-body">
+                            <div class="card-title">Special Beef Suya (5 Sticks)</div>
+                            <div class="card-desc">Spicy grilled beef with secret pepper recipe, served with fresh onions.</div>
+                            <div class="card-footer">
+                                <div class="price">₦3,000</div>
+                                <button onclick="orderWA('Special Beef Suya (5 Sticks)', '3000')" class="btn-beli">
+                                    <i class="fab fa-whatsapp"></i> Order
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- MENU 2: Peppered Chicken -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600" class="card-img" alt="Peppered Chicken">
-                    <div class="card-body">
-                        <div class="card-title">Peppered Chicken (Full)</div>
-                        <div class="card-desc">Tasty fried chicken with special pepper sauce. Served with side dish.</div>
-                        <div class="card-footer">
-                            <div class="price">₦2,500</div>
-                            <button onclick="orderWA('Peppered Chicken (Full)', '2500')" class="btn-beli">
-                                <i class="fab fa-whatsapp"></i> Order
-                            </button>
+                    <!-- MAKANAN 2: Peppered Chicken -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600" class="card-img" alt="Peppered Chicken">
+                        <div class="card-body">
+                            <div class="card-title">Peppered Chicken (Full)</div>
+                            <div class="card-desc">Tasty fried chicken with special pepper sauce. Served with side dish.</div>
+                            <div class="card-footer">
+                                <div class="price">₦2,500</div>
+                                <button onclick="orderWA('Peppered Chicken (Full)', '2500')" class="btn-beli">
+                                    <i class="fab fa-whatsapp"></i> Order
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- MENU 3: Egusi Soup -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600" class="card-img" alt="Egusi Soup">
-                    <div class="card-body">
-                        <div class="card-title">Egusi Soup + Pounded Yam</div>
-                        <div class="card-desc">Rich melon soup with fresh fish and goat meat. Served with pounded yam.</div>
-                        <div class="card-footer">
-                            <div class="price">₦2,000</div>
-                            <button onclick="orderWA('Egusi Soup + Pounded Yam', '2000')" class="btn-beli">
-                                <i class="fab fa-whatsapp"></i> Order
-                            </button>
+                    <!-- MAKANAN 3: Egusi Soup -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600" class="card-img" alt="Egusi Soup">
+                        <div class="card-body">
+                            <div class="card-title">Egusi Soup + Pounded Yam</div>
+                            <div class="card-desc">Rich melon soup with fresh fish and goat meat. Served with pounded yam.</div>
+                            <div class="card-footer">
+                                <div class="price">₦2,000</div>
+                                <button onclick="orderWA('Egusi Soup + Pounded Yam', '2000')" class="btn-beli">
+                                    <i class="fab fa-whatsapp"></i> Order
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- MENU 4: Party Jollof Rice -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1589302160058-958a6558706e?w=600" class="card-img" alt="Party Jollof Rice">
-                    <div class="card-body">
-                        <div
+                </div>
+            </div>
+
+            <!-- DRINKS MENU -->
+            <div class="menu-category">
+                <h3>🥤 Drinks</h3>
+                <div class="product-grid">
+                    
+                    <!-- MINUMAN 1: Zobo -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1528751014936-863e6e7a0a34?w=600" class="card-img" alt="Zobo Drink">
+                        <div class="card-body">
+                            <div class="card-title">Traditional Zobo</div>
+                            <div class="card-desc">Refreshing hibiscus drink with ginger and pineapple flavor.</div>
+                            <div class="card-footer">
+                                <div class="price">₦500</div>
+                                <button onclick="orderWA('Traditional Zobo', '500')" class="btn-beli">
+                                    <i class="fab fa-whatsapp"></i> Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MINUMAN 2: Orange Juice -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65dae7f?w=600" class="card-img" alt="Orange Juice">
+                        <div class="card-body">
+                            <div class="card-title">Fresh Orange Juice</div>
+                            <div class="card-desc">100% freshly squeezed orange. No artificial sweetener.</div>
+                            <div class="card-footer">
+                                <div class="price">₦800</div>
+                                <button onclick="orderWA('Fresh Orange Juice', '800')" class="btn-beli">
+                                    <i class="fab fa-whatsapp"></i> Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MINUMAN 3: Chapman -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600" class="card-img" alt="Chapman">
+                        <div class="card-body">
+                            <div class="card-title">Chapman</div>
+                            <div class="card-desc">Classic Nigerian cocktail drink with
